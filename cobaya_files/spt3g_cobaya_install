@@ -130,7 +130,7 @@ shelltest = "source %s/bin/clik_profile.sh;clik_print %s/data/spt_data/spt3g_Y1_
 R=True
 e=""
 try:
-  cmd = subprocess.run(shelltest,shell=True,capture_output=True)
+  cmd = subprocess.run(shelltest,shell=True,capture_output=True, executable='/bin/bash')
 except Exception as err:
   R=False
   e=str(err).decode("utf-8")
@@ -182,7 +182,7 @@ if instclik:
   R=True
   e=""
   try:
-    cmd = subprocess.run(shelltest,shell=True,capture_output=True)
+    cmd = subprocess.run(shelltest,shell=True,capture_output=True, executable='/bin/bash')
   except Exception as err:
     R=False
     e=str(err).decode("utf-8")
